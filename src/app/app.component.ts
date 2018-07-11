@@ -16,7 +16,7 @@ export class AppComponent {
   }
 
   exibeMensagemDoServico() {
-    this.veiculoService.getPosts()
+    this.veiculoService.getCategoriasVeiculos()
       .subscribe(data => {
         console.log(data);
       });

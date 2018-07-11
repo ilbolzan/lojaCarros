@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from '../../../node_modules/rxjs';
+import { take, map } from '../../../node_modules/rxjs/operators';
+import { ICategoria, Categoria } from '../shared/models/categoria';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VeiculoService {
   public msg = 'hello world';
-  constructor(private httpClient: Http) { }
+  constructor(private _httpClient: HttpClient) { }
 
-  getPosts(): Observable<any> {
-    return this.httpClient.get('https://jsonplaceholder.typicode.com/posts');
+  getCategoriasVeiculos(): Observable<Categoria[]> {
+    return this._httpClient.get<Categoria[]>('http://localhost:3000/categorias')
+      .pipe(
+        take(1),
+      map((categorias: Categoria[]) => {
+        return categorias.map(categoria => new Categoria(categoria));
+      }));
   }
 }
