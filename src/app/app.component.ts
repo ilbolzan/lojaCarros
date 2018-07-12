@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { VeiculoService } from './services/veiculo.service';
+import { IVeiculo, CategoriaEnum } from './shared/models';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,8 @@ export class AppComponent {
   }
 
   exibeMensagemDoServico() {
-    this.veiculoService.getCategoriasVeiculos()
-      .subscribe(data => {
+    this.veiculoService.getVeiculos(CategoriaEnum.CARRO)
+      .subscribe((data: IVeiculo[]) => {
         console.log(data);
       });
   }

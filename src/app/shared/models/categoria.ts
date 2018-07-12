@@ -17,3 +17,9 @@ export class Categoria implements ICategoria {
         this.nome = categoria.nome;
     }
 }
+
+export enum CategoriaEnum {
+    MOTO = 'moto',
+    CARRO = 'carro',
+    CAMINHAO = 'caminhao'
+}

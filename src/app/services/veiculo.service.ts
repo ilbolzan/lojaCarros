@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from '../../../node_modules/rxjs';
 import { take, map } from '../../../node_modules/rxjs/operators';
-import { ICategoria, Categoria } from '../shared/models/categoria';
+import { IVeiculo, Categoria, CategoriaEnum } from '../shared/models';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +18,9 @@ export class VeiculoService {
       map((categorias: Categoria[]) => {
         return categorias.map(categoria => new Categoria(categoria));
       }));
+  }
+
+  getVeiculos(nomeCategoria: CategoriaEnum): Observable<IVeiculo[]> {
+    return this._httpClient.get<IVeiculo[]>(`http://localhost:3000/veiculos?categoria=${nomeCategoria}`);
   }
 }
