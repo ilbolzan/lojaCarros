@@ -15,6 +15,20 @@ export class AppComponent {
     private veiculoService: VeiculoService,
     private categoriaService: CategoriaService
   ) {
+    this.veiculoService.createVeiculo(
+      {
+        marca: 'Honda',
+        modelo: 'CB600F',
+        ano: 2013,
+        categoria: CategoriaEnum.MOTO,
+        imagemUrl: 'url',
+        unidadesEmEstoque: 0,
+        valor: 28.000
+      } as IVeiculo
+    ).subscribe((data: IVeiculo) => {
+      console.log(data);
+    });
+
     this.exibeMensagemDoServico();
   }
 
@@ -24,10 +38,15 @@ export class AppComponent {
     //     console.log(data);
     //   });
 
-    this.categoriaService.getCategoriasVeiculos()
-      .subscribe((data: ICategoria[]) => {
-        console.log(data);
-      });
+    // this.veiculoService.getVeiculoById(5)
+    // .subscribe((data: IVeiculo) => {
+    //   console.log(data);
+    // });
+
+    // this.categoriaService.getCategoriasVeiculos()
+    //   .subscribe((data: ICategoria[]) => {
+    //     console.log(data);
+    //   });
   }
 }
 

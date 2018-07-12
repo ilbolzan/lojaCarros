@@ -1,5 +1,6 @@
 {
-  "veiculos": [{
+  "veiculos": [
+    {
       "id": 1,
       "marca": "Chevrolet",
       "modelo": "Agile LT 1.4 MPFI 8V flex",
@@ -118,9 +119,20 @@
       "unidadesEmEstoque": 3,
       "categoria": "caminhao",
       "imagemUrl": "https://img.clasf.com.br/2016/08/13/Caminhao-volvo-fh-400-6x2-ano-2010-2010-20160813152759.jpg"
+    },
+    {
+      "marca": "Honda",
+      "modelo": "CB600F",
+      "ano": 2013,
+      "categoria": "moto",
+      "imagemUrl": "url",
+      "unidadesEmEstoque": 0,
+      "valor": 28,
+      "id": 13
     }
   ],
-  "clientes": [{
+  "clientes": [
+    {
       "id": 1,
       "perfil": "administrador",
       "nome": "adrian lemes",
@@ -135,7 +147,8 @@
       "password": "123456"
     }
   ],
-  "categorias": [{
+  "categorias": [
+    {
       "id": 1,
       "descricao": "Veículos Leves",
       "nome": "moto"

@@ -1,5 +1,5 @@
 export interface IVeiculo {
-    id: number;
+    id?: number;
     marca: string;
     modelo: string;
     ano: number;
