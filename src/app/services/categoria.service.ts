@@ -15,7 +15,7 @@ export class CategoriaService extends HttpBase {
    }
 
   getCategoriasVeiculos(): Observable<Categoria[]> {
-    return this._httpClient.get<Categoria[]>(this.UrlBase)
+    return this._httpClient.get<Categoria[]>(`${this.UrlBase}/`)
       .pipe(
         take(1),
       map((categorias: Categoria[]) => {

@@ -1,4 +1,4 @@
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 
 export abstract class HttpBase {
     protected URL_SERVICO: string;
